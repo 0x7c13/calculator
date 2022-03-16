@@ -11,6 +11,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
 using Windows.Storage;
+using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
@@ -18,6 +19,7 @@ using Windows.UI.Xaml.Automation;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using MUXC = Microsoft.UI.Xaml.Controls;
 
@@ -46,6 +48,28 @@ namespace CalculatorApp
                     DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait | DisplayOrientations.PortraitFlipped;
                 }
             }
+
+            Background = GetAppBackgroundBrush();
+        }
+
+        private static Brush GetAppBackgroundBrush()
+        {
+            var color = Color.FromArgb(255, 46, 46, 46);
+            var tintOpacity = 0.7f;
+
+            return new HostBackdropAcrylicBrush()
+            {
+                FallbackColor = color,
+                LuminosityColor = color,
+                TintOpacity = tintOpacity,
+                NoiseTextureUri = ToAppxUri("/Assets/noise_high.png"),
+            };
+        }
+
+        private static Uri ToAppxUri(string path)
+        {
+            string prefix = $"ms-appx://{(path.StartsWith('/') ? string.Empty : "/")}";
+            return new Uri($"{prefix}{path}");
         }
 
         public CalculatorApp.ViewModel.ApplicationViewModel Model

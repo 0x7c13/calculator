@@ -8,7 +8,6 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
       x:Name="PageRoot"
-      muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
       Loaded="OnPageLoaded"
       mc:Ignorable="d">
 

@@ -143,6 +143,7 @@
     </Compile>
     <Compile Include="Common\AlwaysSelectedCollectionView.cs" />
     <Compile Include="Common\AppLifecycleLogger.cs" />
+    <Compile Include="Common\HostBackdropAcrylicBrush.cs" />
     <Compile Include="Common\KeyboardShortcuManager.cs" />
     <Compile Include="Common\ValidatingConverters.cs" />
     <Compile Include="Common\ViewState.cs" />
@@ -524,6 +525,7 @@
     <Content Include="Assets\Graphing.targetsize-64.png" />
     <Content Include="Assets\Graphing.targetsize-64_contrast-black.png" />
     <Content Include="Assets\Graphing.targetsize-64_contrast-white.png" />
+    <Content Include="Assets\noise_high.png" />
     <Content Include="Assets\Programmer.targetsize-16_contrast-black.png" />
     <Content Include="Assets\Programmer.targetsize-16_contrast-white.png" />
     <Content Include="Assets\Programmer.targetsize-20_contrast-black.png" />
@@ -795,6 +797,9 @@
       <Version>6.2.10</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml" Version="2.7.0" />
+    <PackageReference Include="Win2D.uwp">
+      <Version>1.26.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CalcViewModel\CalcViewModel.vcxproj">
